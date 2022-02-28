@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+.btn {
+  border: none;
+  background-color: inherit;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.btn:hover {background: #44475a;}
+
+.ascii {color: #f8f8f2;}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+.imgbox {
+    display: grid;
+    height: 100%;
+}
+.center-fit {
+    max-width: 100%;
+    max-height: 100vh;
+    margin: auto;
+}
+</style>
+
+
+<title>Órarend</title>
+<button class="btn ascii" onclick="change_page()">Back</button>
+
+</head><link rel="icon" href="ubb.png">
+
+<body style="background-color:#282a36;">
+
+    <script>
+        function change_page(){
+            window.location.href = "index.html";
+        } 
+    </script>
+
+<div class="imgbox">
+    <img class="center-fit" src="ascii.png">
+</div>
+
+</body>
