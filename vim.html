@@ -294,18 +294,33 @@ kbd {
   margin: 0.5cm;
 }
 
-  .btn {
-    border: none;
-    background-color: inherit;
-    padding: 8px 16px;
-    font-size: 16px;
-    cursor: pointer;
-    display: inline-block;
-  }
-  
-  .btn:hover {background: #44475a;}
-  
-  .ascii {color: #f8f8f2;}
+.btn {
+  border: none;
+  background-color: #6272a4;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  padding-top: 12px;
+}
+
+.btn:hover {
+  color: #ff79c6;
+  text-decoration: underline;
+}
+.ascii {color: #f8f8f2;}
+
+#topnavbar {
+  width:100%;
+  height:50px;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position:fixed;
+  background-color: #6272a4;
+  vertical-align: center;
+}
   
   * {
       margin: 0;
@@ -329,7 +344,12 @@ kbd {
   <link rel="shortcut icon" href="https://vim.rtorr.com/images/icons/icon-48x48.png">
   <meta http-equiv="cache-control" content="max-age=600">
 
-<button class="btn ascii" onclick="change_page()">Back</button>
+  <div id="topnavbar">
+    <button class="btn ascii" onclick="change_page_orar()">Orar</button>
+    <button class="btn ascii" onclick="window.open('https://canvas2.cs.ubbcluj.ro/','_blank')">Canvas</button>
+    <button class="btn ascii" onclick="change_page_ascii()">ASCII</button>
+    <button class="btn ascii" onclick="change_page_vim()">vim cheat sheet</button>
+  </div>
 <div></div><div></div><div></div></head>
 
 <body>
@@ -337,9 +357,9 @@ kbd {
     <div class="grid-block">
       <div class="grid-1">
         <h1>
-          <a class="site-title">
+          <!-- <a class="site-title" style="padding-top: 50px;">
             Vim Cheat Sheet
-          </a>
+          </a> -->
         </h1>
       </div>
     </div>
@@ -1097,8 +1117,14 @@ kbd {
         navigator.serviceWorker.register('/javascripts/sw.js?version=3.1.1');
       });
     }
-        function change_page(){
-            window.location.href = "index.html";
-        } 
+      function change_page_ascii(){
+        window.location.href = "ascii.html";
+      } 
+      function change_page_vim(){
+        window.location.href = "vim.html";
+      }
+      function change_page_orar(){
+        window.location.href = "index.html";
+      }
   </script>
 </body></html>
