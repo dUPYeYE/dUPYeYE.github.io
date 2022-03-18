@@ -118,4 +118,8 @@ input[type=button] {
     .Gombok {
         display: none;
     }
+
+    .dropdown {
+        display: block;
+    }
   }
