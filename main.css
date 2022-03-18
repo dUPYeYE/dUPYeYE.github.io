@@ -145,8 +145,6 @@ input[type=button] {
   display: block;
 }
 
-/* .dropdown-content input:hover {background-color: #ddd;} */
-
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: #6272a4;}
