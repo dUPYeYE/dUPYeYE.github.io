@@ -8,76 +8,65 @@
 
   <script>
     function SelectDay() {
-    var d = new Date();
+      var d = new Date();
 
-        tableHetfo.style.display = "none";
-        tableKedd.style.display = "none";
-        tableSzerda.style.display = "none";
-        tableCsutortok.style.display = "none";
-        tablePentek.style.display = "none";
-        tableAscii.style.display = "none";
+      tableHetfo.style.display = "none";
+      tableKedd.style.display = "none";
+      tableSzerda.style.display = "none";
+      tableCsutortok.style.display = "none";
+      tablePentek.style.display = "none";
 
-        if(d.getDay() == 2)
-        {
-            tableKedd.style.display = "table";
-        }
-        else if(d.getDay() == 3)
-        {
-            tableSzerda.style.display = "table";
-        }
-        else if(d.getDay() == 4)
-        {
-            tableCsutortok.style.display = "table";
-        }
-        else if(d.getDay() == 5)
-        {
-            tablePentek.style.display = "table";
-        }
-        else
-        {
-            tableHetfo.style.display = "table";
-        }
-
-        function change_page_ascii(){
-            window.location.href = "ascii.html";
-        } 
-        function change_page_vim(){
-            window.location.href = "vim.html";
-        }
-        function change_page_orar(){
-            window.location.href = "index.html";
-        }
+      if(d.getDay() == 2)
+      {
+        tableKedd.style.display = "table";
+      }
+      else if(d.getDay() == 3)
+      {
+        tableSzerda.style.display = "table";
+      }
+      else if(d.getDay() == 4)
+      {
+        tableCsutortok.style.display = "table";
+      }
+      else if(d.getDay() == 5)
+      {
+        tablePentek.style.display = "table";
+      }
+      else
+      {
+        tableHetfo.style.display = "table";
+      }
   }
   </script>
 </head><link rel="icon" href="ubb.png">
 <body style=  "background-color:#282a36"; onload = "SelectDay();">
   <div id="topnavbar">
-    <button class="btn ascii" onclick="change_page_orar()">Orar</button>
+    <button class="btn ascii" onclick="window.open('index.html', '_self')">Orar</button>
     <button class="btn ascii" onclick="window.open('https://canvas2.cs.ubbcluj.ro/','_blank')">Canvas</button>
-    <button class="btn ascii" onclick="change_page_ascii()">ASCII</button>
-    <button class="btn ascii" onclick="change_page_vim()">vim cheat sheet</button>
+    <button class="btn ascii" onclick="window.open('ascii.html', '_self')">ASCII</button>
+    <button class="btn ascii" onclick="window.open('vim.html', '_self')">vim cheat sheet</button>
   </div>
 
   <h1 style = "font-family: Hack Nerd Font Mono; text-align: center; color:#f8f8f2; padding-top: 50px;">521/2 Órarend</h1>
 
-  <div class="container">
-    <div class="Gombok">
-      <input type="button" id="showTableHetfo" value="Hétfő">
-      <input type="button" id="showTableKedd" value="Kedd">
-      <input type="button" id="showTableSzerda" value="Szerda">
-      <input type="button" id="showTableCsutortok" value="Csütörtök">
-      <input type="button" id="showTablePentek" value="Péntek">
-    </div>
-  </div>
 
   <div class="dropdown">
-    <ul>
-      <li><input type="button" id="showTableHetfo" value="Hétfő"></li>
-      <li><input type="button" id="showTableKedd" value="Kedd"></li>
-      <li><input type="button" id="showTableSzerda" value="Szerda"></li>
-      <li><input type="button" id="showTableCsutortok" value="Csütörtök"></li>
-      <li><input type="button" id="showTablePentek" value="Péntek"></li>
-    </ul>
+    <button class="dropbtn">Choose day</button>
+    <div class="dropdown-content">
+      <input type="button" id="showTableHetfo1" value="Hétfő">
+      <input type="button" id="showTableKedd1" value="Kedd">
+      <input type="button" id="showTableSzerda1" value="Szerda">
+      <input type="button" id="showTableCsutortok1" value="Csütörtök">
+      <input type="button" id="showTablePentek1" value="Péntek">
+    </div>
+  </div>
+  
+  <div class="container">
+    <input type="button" id="showTableHetfo" value="Hétfő">
+    <input type="button" id="showTableKedd" value="Kedd">
+    <input type="button" id="showTableSzerda" value="Szerda">
+    <input type="button" id="showTableCsutortok" value="Csütörtök">
+    <input type="button" id="showTablePentek" value="Péntek">
   </div>
 
   <!-- HETFO -->
@@ -128,7 +117,7 @@
   <!-- KEDD -->
 
 
-  <table class="center" style="width:80%; color:#f8f8f2;" id="tableKedd">
+  <table class="center" style="width:80vw; color:#f8f8f2;" id="tableKedd">
     <tr>
     <th style="width:10%; color:#f8f8f2;">Óra</th>
       <th style="color:#f8f8f2;">Tantárgy</th>
@@ -282,73 +271,97 @@
       </tr>
   </table>
 
-  <p class="center" style="width:80%;" id="tableAscii">
-    <img src="1200px-ASCII-Table-wide.svg.png" style="vertical-align:middle">
-  </p>
-
   <script>
     var tableHetfo = document.getElementById("tableHetfo");
-        var tableKedd = document.getElementById("tableKedd");
-        var tableSzerda = document.getElementById("tableSzerda");
-        var tableCsutortok = document.getElementById("tableCsutortok");
-        var tablePentek = document.getElementById("tablePentek");
-        var tableAscii = document.getElementById("tableAscii");
+    var tableKedd = document.getElementById("tableKedd");
+    var tableSzerda = document.getElementById("tableSzerda");
+    var tableCsutortok = document.getElementById("tableCsutortok");
+    var tablePentek = document.getElementById("tablePentek");
 
-        var btnTabHetfo = document.getElementById("showTableHetfo");
-        var btnTabKedd = document.getElementById("showTableKedd");
-        var btnTabSzerda = document.getElementById("showTableSzerda");
-        var btnTabCsutortok = document.getElementById("showTableCsutortok");
-        var btnTabPentek = document.getElementById("showTablePentek");
-        var btnTabAscii = document.getElementById("showTableAscii");
+    var btnTabHetfo = document.getElementById("showTableHetfo");
+    var btnTabKedd = document.getElementById("showTableKedd");
+    var btnTabSzerda = document.getElementById("showTableSzerda");
+    var btnTabCsutortok = document.getElementById("showTableCsutortok");
+    var btnTabPentek = document.getElementById("showTablePentek");
+    var btnTabAscii = document.getElementById("showTableAscii");
 
-        btnTabHetfo.onclick = function () {
-            tableHetfo.style.display = "table";
-            tableKedd.style.display = "none";
-            tableSzerda.style.display = "none";
-            tableCsutortok.style.display = "none";
-            tablePentek.style.display = "none";
-            tableAscii.style.display = "none";
-        }
-        btnTabKedd.onclick = function () {
-            tableHetfo.style.display = "none";
-            tableKedd.style.display = "table";
-            tableSzerda.style.display = "none";
-            tableCsutortok.style.display = "none";
-            tablePentek.style.display = "none";
-            tableAscii.style.display = "none";
-        }
-        btnTabSzerda.onclick = function () {
-            tableHetfo.style.display = "none";
-            tableKedd.style.display = "none";
-            tableSzerda.style.display = "table";
-            tableCsutortok.style.display = "none";
-            tablePentek.style.display = "none";
-            tableAscii.style.display = "none";
-        }
-        btnTabCsutortok.onclick = function () {
-            tableHetfo.style.display = "none";
-            tableKedd.style.display = "none";
-            tableSzerda.style.display = "none";
-            tableCsutortok.style.display = "table";
-            tablePentek.style.display = "none";
-            tableAscii.style.display = "none";
-        }
-        btnTabPentek.onclick = function () {
-            tableHetfo.style.display = "none";
-            tableKedd.style.display = "none";
-            tableSzerda.style.display = "none";
-            tableCsutortok.style.display = "none";
-            tablePentek.style.display = "table";
-            tableAscii.style.display = "none";
-        }
-        btnTabAscii.onclick = function () {
-            tableHetfo.style.display = "none";
-            tableKedd.style.display = "none";
-            tableSzerda.style.display = "none";
-            tableCsutortok.style.display = "none";
-            tablePentek.style.display = "none";
-            tableAscii.style.display = "table";
-        }
+    var btnTabHetfo1 = document.getElementById("showTableHetfo1");
+    var btnTabKedd1 = document.getElementById("showTableKedd1");
+    var btnTabSzerda1 = document.getElementById("showTableSzerda1");
+    var btnTabCsutortok1 = document.getElementById("showTableCsutortok1");
+    var btnTabPentek1 = document.getElementById("showTablePentek1");
+
+    btnTabHetfo.onclick = function () {
+      tableHetfo.style.display = "table";
+      tableKedd.style.display = "none";
+      tableSzerda.style.display = "none";
+      tableCsutortok.style.display = "none";
+      tablePentek.style.display = "none";
+    }
+    btnTabKedd.onclick = function () {
+      tableHetfo.style.display = "none";
+      tableKedd.style.display = "table";
+      tableSzerda.style.display = "none";
+      tableCsutortok.style.display = "none";
+      tablePentek.style.display = "none";
+    }
+    btnTabSzerda.onclick = function () {
+      tableHetfo.style.display = "none";
+      tableKedd.style.display = "none";
+      tableSzerda.style.display = "table";
+      tableCsutortok.style.display = "none";
+      tablePentek.style.display = "none";
+    }
+    btnTabCsutortok.onclick = function () {
+      tableHetfo.style.display = "none";
+      tableKedd.style.display = "none";
+      tableSzerda.style.display = "none";
+      tableCsutortok.style.display = "table";
+      tablePentek.style.display = "none";
+    }
+    btnTabPentek.onclick = function () {
+      tableHetfo.style.display = "none";
+      tableKedd.style.display = "none";
+      tableSzerda.style.display = "none";
+      tableCsutortok.style.display = "none";
+      tablePentek.style.display = "table";
+    }
+
+    btnTabHetfo1.onclick = function () {
+      tableHetfo.style.display = "table";
+      tableKedd.style.display = "none";
+      tableSzerda.style.display = "none";
+      tableCsutortok.style.display = "none";
+      tablePentek.style.display = "none";
+    }
+    btnTabKedd1.onclick = function () {
+      tableHetfo.style.display = "none";
+      tableKedd.style.display = "table";
+      tableSzerda.style.display = "none";
+      tableCsutortok.style.display = "none";
+      tablePentek.style.display = "none";
+    }
+    btnTabSzerda1.onclick = function () {
+      tableHetfo.style.display = "none";
+      tableKedd.style.display = "none";
+      tableSzerda.style.display = "table";
+      tableCsutortok.style.display = "none";
+      tablePentek.style.display = "none";
+    }
+    btnTabCsutortok1.onclick = function () {
+      tableHetfo.style.display = "none";
+      tableKedd.style.display = "none";
+      tableSzerda.style.display = "none";
+      tableCsutortok.style.display = "table";
+      tablePentek.style.display = "none";
+    }
+    btnTabPentek1.onclick = function () {
+      tableHetfo.style.display = "none";
+      tableKedd.style.display = "none";
+      tableSzerda.style.display = "none";
+      tableCsutortok.style.display = "none";
+      tablePentek.style.display = "table";
+    }
   </script>
 </body>
 </html>
