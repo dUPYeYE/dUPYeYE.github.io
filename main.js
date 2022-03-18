@@ -1,35 +1,3 @@
-function SelectDay() {
-    var d = new Date();
-
-        tableHetfo.style.display = "none";
-        tableKedd.style.display = "none";
-        tableSzerda.style.display = "none";
-        tableCsutortok.style.display = "none";
-        tablePentek.style.display = "none";
-        tableAscii.style.display = "none";
-
-        if(d.getDay() == 2)
-        {
-            tableKedd.style.display = "table";
-        }
-        else if(d.getDay() == 3)
-        {
-            tableSzerda.style.display = "table";
-        }
-        else if(d.getDay() == 4)
-        {
-            tableCsutortok.style.display = "table";
-        }
-        else if(d.getDay() == 5)
-        {
-            tablePentek.style.display = "table";
-        }
-        else
-        {
-            tableHetfo.style.display = "table";
-        }
-  }
-
 function change_page_ascii(){
     window.location.href = "ascii.html";
 } 
