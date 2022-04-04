@@ -1,367 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-  <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-
-  <title>Órarend</title>
-
-  <script>
-    function SelectDay() {
-      var d = new Date();
-
-      tableHetfo.style.display = "none";
-      tableKedd.style.display = "none";
-      tableSzerda.style.display = "none";
-      tableCsutortok.style.display = "none";
-      tablePentek.style.display = "none";
-
-      if(d.getDay() == 2)
-      {
-        tableKedd.style.display = "table";
-      }
-      else if(d.getDay() == 3)
-      {
-        tableSzerda.style.display = "table";
-      }
-      else if(d.getDay() == 4)
-      {
-        tableCsutortok.style.display = "table";
-      }
-      else if(d.getDay() == 5)
-      {
-        tablePentek.style.display = "table";
-      }
-      else
-      {
-        tableHetfo.style.display = "table";
-      }
-  }
-  </script>
-</head><link rel="icon" href="ubb.png">
-<body style=  "background-color:#282a36"; onload = "SelectDay();">
-  <div id="topnavbar">
-    <button class="btn ascii" onclick="window.open('index.html', '_self')">Orar</button>
-    <button class="btn ascii" onclick="window.open('https://canvas2.cs.ubbcluj.ro/','_blank')">Canvas</button>
-    <button class="btn ascii" onclick="window.open('ascii.html', '_self')">ASCII</button>
-    <button class="btn ascii" onclick="window.open('vim.html', '_self')">vim cheat sheet</button>
-  </div>
-
-  <h1 style = "font-family: Hack Nerd Font Mono; text-align: center; color:#f8f8f2; padding-top: 50px;">521/2 Órarend</h1>
-
-
-  <div class="dropdown">
-    <button class="dropbtn">Choose day</button>
-    <div class="dropdown-content">
-      <input type="button" id="showTableHetfo1" value="Hétfő">
-      <input type="button" id="showTableKedd1" value="Kedd">
-      <input type="button" id="showTableSzerda1" value="Szerda">
-      <input type="button" id="showTableCsutortok1" value="Csütörtök">
-      <input type="button" id="showTablePentek1" value="Péntek">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Home</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <div class="container">
+        <div id="clock"></div>
+        <!-- <div class="weather-container">
+            <div class="row">
+                <div id="weather-description"class="inline"></div>
+                <div class="inline">-</div>
+                <div id="temp" class="inline"></div>
+            </div>
+        </div> -->
+        <div class="bookmark-container">
+            <div class="bookmark-set">
+                <div class="bookmark-title">Utilities</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://dupyeye.github.io/" target="_blank">Schedule</a>
+                    <a class="bookmark" href="https://canvas2.cs.ubbcluj.ro/" target="_blank">Canvas</a>
+                    <a class="bookmark" href="https://sites.google.com/site/agostonroth/computer-aided-geometric-design/computer-graphics-bsc-computer-science-groups/" target="_blank">CAGD</a>
+                    <a class="bookmark" href="https://mail.google.com/" target="_blank">GMail</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+                <div class="bookmark-title">Social & Video</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://youtube.com/" target="_blank">Youtube</a>
+                    <a class="bookmark" href="https://gitlab.com/" target="_blank">GitLab</a>
+                    <a class="bookmark" href="https://github.com" target="_blank">GitHub</a>
+                    <a class="bookmark" href="https://netflix.com" target="_blank">Netflix</a>
+                </div>
+            </div>
+            <div class="bookmark-set">
+            <div class="bookmark-title">Other</div>
+                <div class="bookmark-inner-container">
+                    <a class="bookmark" href="https://draculatheme.com/" target="_blank">Draculatheme</a>
+                    <a class="bookmark" href="https://reddit.com/" target="_blank">Reddit</a>
+                    <a class="bookmark" href="https://monkeytype.com" target="_blank">Monkeytype</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  
-  <div class="container">
-    <input type="button" id="showTableHetfo" value="Hétfő">
-    <input type="button" id="showTableKedd" value="Kedd">
-    <input type="button" id="showTableSzerda" value="Szerda">
-    <input type="button" id="showTableCsutortok" value="Csütörtök">
-    <input type="button" id="showTablePentek" value="Péntek">
-  </div>
 
-  <!-- HETFO -->
+    <script>
+        // Get current time and format
+        getTime = () => {
+            let date = new Date(),
+                min = date.getMinutes(),
+                sec = date.getSeconds(),
+                hour = date.getHours();
 
-  <table id="tableHetfo" class="center" style="width:80%;" >
-    <tr>
-    <th style="width:10% ; color:#f8f8f2;">Óra</th>
-      <th style="color:#f8f8f2;">Tantárgy</th>
-    <th style="width:13% ; color:#f8f8f2; border-color: #bd93f9">Link</th>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">7.30-9.20</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">9.20-11.10</th>
-      <td style="color:#f8f8f2;">Hálózatok (Varga Levente) - Előadás</td>
-      <td style="border-color: #bd93f9;"><p><a href="https://teams.microsoft.com/l/channel/19%3a6cd24d7fd8754fcaa23241433b8f3fb2%40thread.tacv2/El%25C5%2591ad%25C3%25A1s?groupId=4f883b5a-3315-4394-9bb8-dfc2dfd26c7f&tenantId=5a4863ed-40c8-4fd5-8298-fbfdb7f13095" target="_blank"><img src="Teams.png" style="width:70px;height:42px;"></a></p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">11.10-13.00</th>
-      <td style="color:#f8f8f2;">Web (Sulyok Csaba) - Előadás</td>
-      <td style="border-color: #bd93f9;"><p><a href="https://teams.microsoft.com/l/channel/19%3acmjZoG3zEemi-kskJA_4nVD8vduLz0a5olNBRo81C-Y1%40thread.tacv2/General?groupId=f291d46b-e867-4b40-92bb-7e1b2129a266&tenantId=5a4863ed-40c8-4fd5-8298-fbfdb7f13095" target="_blank"><img src="Teams.png" style="width:70px;height:42px;"></a></p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">13.00-14.50</th>
-      <td style="color:#f8f8f2;">Grafika (Roth Ágoston) - Előadás</td>
-      <td style="border-color: #bd93f9;"><p><a href="https://zoom.us/j/6815178708?pwd=NUtVcWJiMzVFRWdpVE13MHd4MVVKQT09" target="_blank"><img src="Zoom.png" style="width:50px;height:45px;"></a></p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">14.50-18.30</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">18.30-20.20</th>
-      <td style="color:#f8f8f2;">Hét I - Grafika (Roth Ágoston) - Szeminárium</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">6/II</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">18.30-20.20</th>
-      <td style="color:#f8f8f2;">Hét II - Dinamikus (Lukács Andor) - Szeminárium</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">2/I</p></td></tr>
-  </table>
+            return "" + 
+                (hour < 10 ? ("0" + hour) : hour) + ":" + 
+                (min < 10 ? ("0" + min) : min) + ":" + 
+                (sec < 10 ? ("0" + sec) : sec);
+        }
 
-
-  <!-- KEDD -->
-
-
-  <table class="center" style="width:80vw; color:#f8f8f2;" id="tableKedd">
-    <tr>
-    <th style="width:10%; color:#f8f8f2;">Óra</th>
-      <th style="color:#f8f8f2;">Tantárgy</th>
-    <th style="width:13%; color:#f8f8f2; border-color: #bd93f9;">Link</th>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">7.30-9.20</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">9.20-11.10</th>
-      <td style="color:#f8f8f2;">Dinamikus rendszerek (András Szilárd) - Előadás</td>
-      <td style="border-color: #bd93f9;"><p><a href="https://zoom.us/j/92718784297?pwd=K2ZTNnhsS1h2WHBvL210L2NIZXpNQT09" target="_blank"><img src="Zoom.png" style="width:50px;height:45px;"></a></p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">11.10-14.50</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">14.50-16.40</th>
-      <td style="color:#f8f8f2;">Hét I - Grafika (Roth Ágoston) - Labor</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">lambda</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">14.50-16.40</th>
-      <td style="color:#f8f8f2;">Hét II - Web (Sulyok Csaba) - Labor</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">e</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">16.40-20.20</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-  </table>
-
-  <!-- SZERDA -->
-  
-  
-  <table class="center" style="width:80%; color:#f8f8f2;" id="tableSzerda">
-    <tr>
-    <th style="width:10%; color:#f8f8f2;">Óra</th>
-      <th style="color:#f8f8f2;">Tantárgy</th>
-    <th style="width:13%; color:#f8f8f2; border-color: #bd93f9;">Link</th>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">7.30-12.05</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">12.05-13.55</th>
-      <td style="color:#f8f8f2;">Adatbázisok 2 (Varga Viorica) - Előadás</td>
-      <td style="border-color: #bd93f9;"><p><a href="https://teams.microsoft.com/l/channel/19%3a051c4f3556b64fe0b993ad9f68f72dc4%40thread.tacv2/El%25C5%2591ad%25C3%25A1s?groupId=db05bceb-df96-40f6-9974-3fb43a048263&tenantId=5a4863ed-40c8-4fd5-8298-fbfdb7f13095" target="_blank"><img src="Teams.png" style="width:70px;height:42px;"></a></p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">13.55-14.50</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">14.50-16.40</th>
-      <td style="color:#f8f8f2;">Hét II - Hálózatok (Sándor Csanád) - Labor</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">C343</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">16.40-18.30</th>
-      <td style="color:#f8f8f2;">Hét I - WebProg (Tunyogi Rudolf) - Szemi</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">C329</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">16.40-18.30</th>
-      <td style="color:#f8f8f2;">Hét II - MestInt (Csató Lehel) - Szemi</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">C329</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">18.30-20.20</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-  </table>
-
-  <!-- CSUTORTOK -->
-  
-  
-  <table class="center" style="width:80%; color:#f8f8f2;" id="tableCsutortok">
-    <tr>
-    <th style="width:10%; color:#f8f8f2;">Óra</th>
-      <th style="color:#f8f8f2;">Tantárgy</th>
-    <th style="width:13%; color:#f8f8f2; border-color: #bd93f9;">Link</th>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">7.30-8.25</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">8.25-10.15</th>
-      <td style="color:#f8f8f2;">MestInt (Csató Lehel) - Előadás</td>
-      <td style="border-color: #bd93f9;"><p><a href="https://teams.microsoft.com/l/channel/19%3a8o-8g0VAg_v9RqeFJF_nnLh33c-b2oo_NU6iX8AQxoM1%40thread.tacv2/General?groupId=40634810-2849-42c5-9957-4b4c43cfd6b0&tenantId=5a4863ed-40c8-4fd5-8298-fbfdb7f13095" target="_blank"><img src="Teams.png" style="width:70px;height:42px;"></a></p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">10.15-11.10</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">11.10-13.00</th>
-      <td style="color:#f8f8f2;">Hét I - Adatbázisok 2 (Doka Molnár Andrea) - Szemi</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">L329</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">11.10-13.00</th>
-      <td style="color:#f8f8f2;">Hét II - Dinamikus rendszerek (Kajántó Sándor) - Labor</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">lambda</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">13.00-14.50</th>
-      <td style="color:#f8f8f2;">Hét I - Hálózatok (Varga Levente) - Szemi</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">L335</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">13.00-14.50</th>
-      <td style="color:#f8f8f2;">Hét II - MestInt (Kopacz Anikó) - Labor</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">gamma</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">14.50-16.40</th>
-      <td style="color:#f8f8f2;">Hét I - Adatbázisok 2 (Doka Molnár Andrea) - Labor</td>
-      <td style="border-color: #bd93f9;"><p style="color: #f8f8f2">L306</p></td>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">16.40-20.20</th>
-      <td>-</td>
-      <td style="border-color: #bd93f9;">-</td>
-    </tr>
-  </table>
-
-  <!-- PENTEK -->
-  
-  
-  <table class="center" style="width:80%; color:#f8f8f2;" id="tablePentek">
-    <tr>
-    <th style="width:10%; color:#f8f8f2;">Óra</th>
-      <th style="color:#f8f8f2;">Tantárgy</th>
-    </tr>
-    <tr>
-      <th style="width:10%; color:#f8f8f2;">ALL DAY</th>
-      <td style="color:#f8f8f2;">FREEEEEE</td>
-      </tr>
-  </table>
-
-  <script>
-    var tableHetfo = document.getElementById("tableHetfo");
-    var tableKedd = document.getElementById("tableKedd");
-    var tableSzerda = document.getElementById("tableSzerda");
-    var tableCsutortok = document.getElementById("tableCsutortok");
-    var tablePentek = document.getElementById("tablePentek");
-
-    var btnTabHetfo = document.getElementById("showTableHetfo");
-    var btnTabKedd = document.getElementById("showTableKedd");
-    var btnTabSzerda = document.getElementById("showTableSzerda");
-    var btnTabCsutortok = document.getElementById("showTableCsutortok");
-    var btnTabPentek = document.getElementById("showTablePentek");
-    var btnTabAscii = document.getElementById("showTableAscii");
-
-    var btnTabHetfo1 = document.getElementById("showTableHetfo1");
-    var btnTabKedd1 = document.getElementById("showTableKedd1");
-    var btnTabSzerda1 = document.getElementById("showTableSzerda1");
-    var btnTabCsutortok1 = document.getElementById("showTableCsutortok1");
-    var btnTabPentek1 = document.getElementById("showTablePentek1");
-
-    btnTabHetfo.onclick = function () {
-      tableHetfo.style.display = "table";
-      tableKedd.style.display = "none";
-      tableSzerda.style.display = "none";
-      tableCsutortok.style.display = "none";
-      tablePentek.style.display = "none";
-    }
-    btnTabKedd.onclick = function () {
-      tableHetfo.style.display = "none";
-      tableKedd.style.display = "table";
-      tableSzerda.style.display = "none";
-      tableCsutortok.style.display = "none";
-      tablePentek.style.display = "none";
-    }
-    btnTabSzerda.onclick = function () {
-      tableHetfo.style.display = "none";
-      tableKedd.style.display = "none";
-      tableSzerda.style.display = "table";
-      tableCsutortok.style.display = "none";
-      tablePentek.style.display = "none";
-    }
-    btnTabCsutortok.onclick = function () {
-      tableHetfo.style.display = "none";
-      tableKedd.style.display = "none";
-      tableSzerda.style.display = "none";
-      tableCsutortok.style.display = "table";
-      tablePentek.style.display = "none";
-    }
-    btnTabPentek.onclick = function () {
-      tableHetfo.style.display = "none";
-      tableKedd.style.display = "none";
-      tableSzerda.style.display = "none";
-      tableCsutortok.style.display = "none";
-      tablePentek.style.display = "table";
-    }
-
-    btnTabHetfo1.onclick = function () {
-      tableHetfo.style.display = "table";
-      tableKedd.style.display = "none";
-      tableSzerda.style.display = "none";
-      tableCsutortok.style.display = "none";
-      tablePentek.style.display = "none";
-    }
-    btnTabKedd1.onclick = function () {
-      tableHetfo.style.display = "none";
-      tableKedd.style.display = "table";
-      tableSzerda.style.display = "none";
-      tableCsutortok.style.display = "none";
-      tablePentek.style.display = "none";
-    }
-    btnTabSzerda1.onclick = function () {
-      tableHetfo.style.display = "none";
-      tableKedd.style.display = "none";
-      tableSzerda.style.display = "table";
-      tableCsutortok.style.display = "none";
-      tablePentek.style.display = "none";
-    }
-    btnTabCsutortok1.onclick = function () {
-      tableHetfo.style.display = "none";
-      tableKedd.style.display = "none";
-      tableSzerda.style.display = "none";
-      tableCsutortok.style.display = "table";
-      tablePentek.style.display = "none";
-    }
-    btnTabPentek1.onclick = function () {
-      tableHetfo.style.display = "none";
-      tableKedd.style.display = "none";
-      tableSzerda.style.display = "none";
-      tableCsutortok.style.display = "none";
-      tablePentek.style.display = "table";
-    }
-  </script>
+        window.onload = () => {
+            let xhr = new XMLHttpRequest();
+            // Request to open weather map
+            xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?id=681291&units=metric&appid=7a73e841c20bbc3ae9e921ed5a754be0');
+            xhr.onload = () => {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        let json = JSON.parse(xhr.responseText);
+                        console.log(json);
+                        document.getElementById("temp").innerHTML = json.main.temp.toFixed(0) + " C";
+                        document.getElementById("weather-description").innerHTML = json.weather[0].description;
+                    } else {
+                        console.log('error msg: ' + xhr.status);
+                    }
+                }
+            }
+            xhr.send();
+            // Set up the clock
+            document.getElementById("clock").innerHTML = getTime();
+            // Set clock interval to tick clock
+            setInterval( () => {
+                document.getElementById("clock").innerHTML = getTime();
+            },100);
+        }
+    </script>
 </body>
 </html>
