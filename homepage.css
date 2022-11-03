@@ -50,6 +50,12 @@ body {
         width: auto;
         margin: 1em 0em;
     }
+    .bookmark-logo {
+        display: none;
+    }
+    .bookmark-logo-netflix {
+        display: none;
+    }
 }
 
 .bookmark-set{
