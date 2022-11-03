@@ -40,11 +40,12 @@ body {
         height: auto;
     }
     #clock {
+        font-size: 5rem;
         margin-top: 1em;
     }
     .container > .bookmark-container {
         flex-direction: column;
-        width: 60%;
+        width: 80%;
     }
     .bookmark-container > .bookmark-set {
         width: auto;
